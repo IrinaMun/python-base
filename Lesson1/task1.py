@@ -19,9 +19,9 @@ hours = hours % 24
 
 if u_sec <= 59:
     print("%2d sec" % seconds)
-elif 60 <= u_sec <= 3600:
+elif 60 <= u_sec <= 3599:
     print("%2d min %2d sec" % (minutes, seconds))
-elif 3600 <= u_sec <= 86390:
+elif 3600 <= u_sec <= 86399:
     print("%2d h %2d min %2d sec" % (hours, minutes, seconds))
 elif u_sec >= 86400:
     print("%2dd %2dh %2dmin %2dsec" % (days, hours, minutes, seconds))
