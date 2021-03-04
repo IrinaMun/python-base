@@ -20,21 +20,26 @@
 Задачи со * предназначены для продвинутых учеников, которым мало сделать обычное задание.
 """
 price = [67.56, 45.8, 5.56, 100.1, 15.6, 15.26, 98.14, 56.25, 32.7, 25.5]
+print(f'Проверка ID: {id(price)}')
+price.sort()
+print(f'Проверка ID: {id(price)}')
+print(f'Список цен по возрастанию: {price}')
+price_rev = price[::-1]
+print(f'Список цен по убыванию: {price_rev}')
+
+price_exp = price_rev[:5:]
+print(f'Список цен 5 самых дорогих товаров: {price_exp}')
 
 for el in price:
-    a = int(el)
-    b = (el * 100) % 100
-    b = int(b)
-    print(f'{a:02d} руб. {b} коп.,', end=' ')
+    rub = int(el)
+    kop = (el * 100) % 100
+    kop = int(kop)
+    print(f'{rub:02d} руб. {kop} коп.', end='  ')
 
-print(id(price))
 
-price.sort()
-price_rev = price[::-1]
-price_exp = price_rev[:5:]
 
-print(price, id(price))
-print(price_rev, id(price_rev))
-print(price_exp)
+
+
+
 
 
