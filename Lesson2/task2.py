@@ -16,12 +16,18 @@
 Примечание: если обособление чисел кавычками не будет получаться - можете вернуться к его реализации позже. Главное:
 дополнить числа до двух разрядов нулём!
 """
-unsort_list = ['в', '5', 'часов', '17', 'минут', 'температура', 'воздуха', 'была', '+5', 'градусов']
-print(unsort_list[5])
-# b = ' '.join(unsort_list)
-# for i in b:
-#     if i.isdigit():
-#         print(i)
+initial_list = ['в', '5', 'часов', '17', 'минут', 'температура', 'воздуха', 'была', '+5', 'градусов']
 
+result_list = []
+for word in initial_list:
+    if word.isdigit():
+        result_list.append('"')
+        result_list.append(word.zfill(2))
+        result_list.append('"')
+    elif (word[0] == '+') and word[1:].isdigit():
+        sing = word[0]
+        result_list.extend(['"' + sing + f'{int(word[1:]):02}"'])
+    else:
+        result_list.append(word)
 
-# print(b)
+print(' '.join(result_list))
