@@ -17,16 +17,6 @@
 сравниваем первую букву имени и ключ, если идентичны, имя запихиваем в значение
 """
 
-# for el in employees:
-#     letter = el[0]
-#     tmp_list = []
-#     dict_employees[letter] = tmp_list
-#     if letter == el[0]:
-#         tmp_list.append(el)
-#         print(tmp_list)
-
-# print(dict_employees)
-
 employees = ['Игорь', 'Виктор', 'Илья', 'Вольдемар', 'Никита', 'Ирина', 'Наталья', 'Владимир', 'Нина']
 
 
