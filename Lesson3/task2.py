@@ -8,6 +8,7 @@
 # >>> num_translate_adv("two")
 "два"
 """
+
 dict_words = {
     'zero': 'ноль',
     'one': 'один',
