@@ -29,9 +29,10 @@ import xml.etree.ElementTree as ElT
 
 def get_currency_rate(currency):
     """
+    Функция, возвращающая курс заданной валюты по отношению к рублю.
 
-    :param currency:
-    :return:
+    :param currency: код валюты
+    :return: рубли к валюте, числовой тип
     """
     currency = currency.upper()
     request = get('http://www.cbr.ru/scripts/XML_daily.asp')
