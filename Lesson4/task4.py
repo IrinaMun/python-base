@@ -11,3 +11,8 @@ EUR 80.35
 USD 75.18, 2020-09-05
 EUR 80.35, 2020-09-05
 """
+import Lesson4.mymodule
+
+print(Lesson4.mymodule.get_currency_rate('usd'))
+print(Lesson4.mymodule.get_currency_rate('Eur'))
+print(Lesson4.mymodule.get_currency_rate('2734jm'))
