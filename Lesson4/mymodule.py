@@ -1,3 +1,4 @@
+# модуль для 4 задачи
 from requests import get
 import xml.etree.ElementTree as ElT
 from decimal import Decimal
