@@ -32,7 +32,7 @@ def get_currency_rate(currency):
     Функция, возвращающая курс заданной валюты по отношению к рублю.
 
     :param currency: код валюты
-    :return: рубли к валюте, числовой тип
+    :return: tuple из кода валюты и курса валюты по отношению к рублю (числовой тип)
     """
     currency = currency.upper()
     request = get('http://www.cbr.ru/scripts/XML_daily.asp')
@@ -43,7 +43,7 @@ def get_currency_rate(currency):
         if char_code == currency:
             course = el.find('Value').text
             course = float(course.replace(',', '.'))
-            return course
+            return currency, course
 
 
 print(get_currency_rate('USD'))
