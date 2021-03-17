@@ -32,5 +32,5 @@ try:
     print(next(rand))
     print(next(rand))
     print(next(rand))
-except StopIteration as exc:
+except StopIteration:
     print('...StopIteration...')
