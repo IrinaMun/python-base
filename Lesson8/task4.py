@@ -20,7 +20,6 @@
 # ValueError: wrong val -5
 # Примечание: сможете ли вы замаскировать работу декоратора?
 # """
-
 def val_checker(func):
     def wrp(func2):
         def wrap(*arg, **kwargs):
