@@ -1,15 +1,35 @@
-"""
-1. Написать функцию email_parse(<email_address>), которая при помощи регулярного выражения извлекает имя пользователя и
-почтовый домен из email адреса и возвращает их в виде словаря. Если адрес не валиден, выбросить исключение ValueError.
-Пример:
->>> email_parse('someone@geekbrains.ru')
-{'username': 'someone', 'domain': 'geekbrains.ru'}
->>> email_parse('someone@geekbrainsru')
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  ...
-    raise ValueError(msg)
-ValueError: wrong email: someone@geekbrainsru
-Примечание: подумайте о возможных ошибках в адресе и постарайтесь учесть их в регулярном выражении;
-имеет ли смысл в данном случае использовать функцию re.compile()?
-"""
+# """
+# 1. РќР°РїРёСЃР°С‚СЊ С„СѓРЅРєС†РёСЋ email_parse(<email_address>), РєРѕС‚РѕСЂР°СЏ РїСЂРё РїРѕРјРѕС‰Рё СЂРµРіСѓР»СЏСЂРЅРѕРіРѕ РІС‹СЂР°Р¶РµРЅРёСЏ РёР·РІР»РµРєР°РµС‚ РёРјСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+# Рё РїРѕС‡С‚РѕРІС‹Р№ РґРѕРјРµРЅ РёР· email Р°РґСЂРµСЃР° Рё РІРѕР·РІСЂР°С‰Р°РµС‚ РёС… РІ РІРёРґРµ СЃР»РѕРІР°СЂСЏ. Р•СЃР»Рё Р°РґСЂРµСЃ РЅРµ РІР°Р»РёРґРµРЅ, РІС‹Р±СЂРѕСЃРёС‚СЊ РёСЃРєР»СЋС‡РµРЅРёРµ
+# ValueError.
+
+# РџСЂРёРјРµСЂ:
+# >>> email_parse('someone@geekbrains.ru')
+# {'username': 'someone', 'domain': 'geekbrains.ru'}
+# >>> email_parse('someone@geekbrainsru')
+
+# Traceback (most recent call last):
+#   File "<stdin>", line 1, in <module>
+#   ...
+#     raise ValueError(msg)
+
+# ValueError: wrong email: someone@geekbrainsru
+
+# РџСЂРёРјРµС‡Р°РЅРёРµ: РїРѕРґСѓРјР°Р№С‚Рµ Рѕ РІРѕР·РјРѕР¶РЅС‹С… РѕС€РёР±РєР°С… РІ Р°РґСЂРµСЃРµ Рё РїРѕСЃС‚Р°СЂР°Р№С‚РµСЃСЊ СѓС‡РµСЃС‚СЊ РёС… РІ СЂРµРіСѓР»СЏСЂРЅРѕРј РІС‹СЂР°Р¶РµРЅРёРё;
+# РёРјРµРµС‚ Р»Рё СЃРјС‹СЃР» РІ РґР°РЅРЅРѕРј СЃР»СѓС‡Р°Рµ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ С„СѓРЅРєС†РёСЋ re.compile()?
+# """
+
+import re
+
+
+def email_parse(*args):
+    my_str = str(args)
+    parsed = re.findall(r'[a-zA-Z0-9.+-]+', my_str)
+    parsed_1 = re.findall(r'[a-zA-Z0-9.+-]+\.[a-zA-Z0-9.+-]+', my_str)
+    if not parsed_1:
+        raise ValueError(f'wrong email: {parsed[1]}')
+    return dict(zip(['username', 'domain'], parsed))
+
+
+print(email_parse('someone@geekbrains.ru'))
+email_parse('someone@geekbrainsru')
