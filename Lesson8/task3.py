@@ -19,7 +19,6 @@ def calc_cube(x):
 calc_cube(5: <class 'int'>)
 """
 
-
 def type_logger(func):
     def wrapper(*args):
         for i in args:
