@@ -16,10 +16,10 @@ try:
     num2 = int(num2)
     if num2 == 0:
         raise DivZero()
-    sum = num1 / num2
+    result = num1 / num2
 except ValueError:
     print("Вы ввели не число!")
 except DivZero:
     print("Вы ввели 0!")
 else:
-    print(sum)
+    print(result)
